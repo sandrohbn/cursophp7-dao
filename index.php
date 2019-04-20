@@ -24,8 +24,21 @@
 	echo json_encode($search);
 	*/
 
-	//Carregar um usuário usando login e senha
+	/*Carregar um usuário usando login e senha
 	$usuario = new Usuario();
 	$usuario->login("login","senha");
+	echo $usuario;
+	*/
+
+	/*Inserir usuario
+	$usuario = new Usuario("Adm", "@dm");
+	$usuario->insert();
+	echo $usuario;
+	*/
+
+	//Atualizar usuário
+	$usuario = new Usuario();
+	$usuario->loadById(15);
+	$usuario->update("Comercial", "C0m");
 	echo $usuario;
 ?>
