@@ -36,9 +36,17 @@
 	echo $usuario;
 	*/
 
-	//Atualizar usuário
+	/*Atualizar usuário
 	$usuario = new Usuario();
 	$usuario->loadById(15);
 	$usuario->update("Comercial", "C0m");
 	echo $usuario;
+	*/
+
+	//Deletar usuário
+	$usuario = new Usuario();
+	$usuario->loadById(15);
+	$usuario->delete();
+	echo $usuario;
+
 ?>

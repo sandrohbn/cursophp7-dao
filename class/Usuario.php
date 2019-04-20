@@ -117,7 +117,7 @@
 		{
 			$this->setDeslogin($login);
 			$this->setDessenha($password);
-			
+
 			$sql = new Sql();
 			$sql->query("UPDATE tb_usuario SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
 				':LOGIN'=>$this->getDeslogin(), 
@@ -126,6 +126,18 @@
 			));
 		}
 
+		public function delete()
+		{
+			$sql = new Sql();
+			$sql->query("DELETE FROM tb_usuario WHERE idusuario = :ID", array(
+				':ID'=>$this->getIdusuario()
+			));
+
+			$this->setIdusuario(0);
+			$this->setDeslogin("");
+			$this->setDessenha("");
+			$this->setDtcadastro(new DateTime());
+		}
 		//metodo magico __toString()
 		public function __toString()
 		{
