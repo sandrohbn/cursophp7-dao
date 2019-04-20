@@ -11,7 +11,7 @@
 		*/
 		private function setParams($statement, $parameters = array()){
 			foreach ($parameters as $key => $value) {
-				$this->setParam($statment, $key, $value);
+				$this->setParam($statement, $key, $value);
 			}
 		}
 		private function setParam($statement, $key, $value){
